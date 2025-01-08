@@ -1,0 +1,23 @@
+Define the Scope of AI Assistance
+
+
+For Personalized Guidance and Support:
+
+Collect user-specific data like:
+Progress (e.g., exercises completed, common mistakes).
+User goals (e.g., mastering British or American accents).
+Use this data to tailor responses:
+Provide targeted tips (e.g., “Focus on reducing stress on vowels like /æ/ in British English.”).
+Suggest exercises based on performance.
+
+
+
+
+For Answering User Questions:
+
+Examples of user questions:
+“How do I pronounce the /r/ sound in American English?”
+“Why does intonation matter in British accents?”
+Use the AI model to:
+Detect key terms in the question (e.g., "pronounce /r/").
+Provide explanations with examples and actionable tips.
