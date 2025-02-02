@@ -7,3 +7,5 @@ myvenv.env
 secrets.json
 Open_ai_api.docx
 text-to-speech-bashar-vai-13836f79738c.json
+logs
+.logs

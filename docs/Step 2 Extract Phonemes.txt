@@ -1,0 +1,13 @@
+Step 2: Extract Phonemes from Audio
+You need a phoneme recognizer to analyze audio. Options include:
+
+Forced Alignment Tools: Align the audio with the transcription to generate phoneme timing.
+Libraries: Montreal Forced Aligner (MFA), aeneas, or gentle.
+
+
+
+Pre-trained ASR Models with Phoneme Outputs:
+Use ASR models (e.g., Wav2Vec2, Kaldi) trained to output phoneme sequences instead of text.
+
+
+Wav2Vec2: A cutting-edge ASR model from Facebook AI. While it’s typically used for transcription, you can fine-tune it to output phonemes.

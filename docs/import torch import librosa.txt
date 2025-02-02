@@ -1,0 +1,30 @@
+import torch
+import librosa
+from transformers import Wav2Vec2Processor, Wav2Vec2ForCTC
+
+def transcribe_audio(file_path, model_path):
+    processor = Wav2Vec2Processor.from_pretrained(model_path)
+    model = Wav2Vec2ForCTC.from_pretrained(model_path).to("cuda" if torch.cuda.is_available() else "cpu")
+
+    # Load and preprocess audio
+    signal, sampling_rate = librosa.load(file_path, sr=16000)
+    inputs = processor(signal, sampling_rate=16000, return_tensors="pt", padding=True)
+
+    # Move to GPU
+    inputs = {key: val.to("cuda") for key, val in inputs.items()}
+    model = model.to("cuda")
+
+    # Generate logits
+    with torch.no_grad():
+        logits = model(**inputs).logits
+
+    # Decode logits
+    predicted_ids = torch.argmax(logits, dim=-1)
+    phoneme_transcription = processor.batch_decode(predicted_ids)
+
+    return phoneme_transcription[0]
+
+# Run phoneme extraction
+transcription = transcribe_audio("test.wav", "./phoneme_wav2vec2_finetuned")
+print(f"Phoneme Transcription: {transcription}")
+
