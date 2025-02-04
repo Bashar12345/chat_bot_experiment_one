@@ -1,0 +1,50 @@
+Set Up Jupyter Notebook for Remote Access
+You’ll use Jupyter Notebook to access and run Hugging Face models from the non-GPU PC.
+
+a. Configure Jupyter Notebook on the GPU PC:
+Generate a Jupyter Notebook configuration file:
+
+bash
+Copy
+Edit
+jupyter notebook --generate-config
+This creates a config file, usually located at ~/.jupyter/jupyter_notebook_config.py.
+
+Set a password for Jupyter:
+
+bash
+Copy
+Edit
+jupyter notebook password
+Open the configuration file and update the following:
+
+Uncomment and set the IP to allow connections from any device:
+arduino
+Copy
+Edit
+c.NotebookApp.ip = '0.0.0.0'
+Uncomment and set the port:
+yaml
+Copy
+Edit
+c.NotebookApp.port = 8888
+Uncomment and set it to not launch a browser:
+graphql
+Copy
+Edit
+c.NotebookApp.open_browser = False
+Start the Jupyter Notebook server:
+
+bash
+Copy
+Edit
+jupyter notebook --allow-root
+b. Access the Jupyter Notebook from the Non-GPU PC:
+Find the GPU PC's IP address by running ipconfig in the Command Prompt on the GPU PC.
+Open a web browser on the non-GPU PC and go to:
+arduino
+Copy
+Edit
+http://<GPU-PC-IP>:8888
+Log in with the password you set earlier.
+
