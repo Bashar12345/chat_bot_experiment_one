@@ -21,3 +21,10 @@ Examples of user questions:
 Use the AI model to:
 Detect key terms in the question (e.g., "pronounce /r/").
 Provide explanations with examples and actionable tips.
+
+
+Extract F0 using Librosa or Parselmouth.
+Extract Intensity using Parselmouth.
+Segment Audio into syllables (using energy-based segmentation or a phoneme aligner).
+Analyze stress based on intensity and duration.
+Combine F0 and Stress Analysis for a comprehensive output.
